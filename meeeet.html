@@ -1,0 +1,84 @@
+<html>
+
+<head>
+
+</head>
+<body>
+
+    <script>
+        function form(){
+            var name =document.getElementById('name').value
+            var email =document.getElementById('email').value
+            var password =document.getElementById('pass1').value
+            var confirmpassword =document.getElementById('pass2').value
+            var validname=/^[a-z][a-z\s]*$/;
+            var validemail=/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+
+        
+
+        if(name == ""){
+            alert("enter a name");
+            return false;
+        }
+        else if(name.length.value <=3){
+            alert("name must be more than 3  charater");
+            return false;
+        }
+        else if(validname.test(name)==true){
+            alert("enter valid name")
+            return false;
+        }
+        if(email==""){
+            alert("enter email")
+            return false
+        }
+        else if(validemail.test(email)==false){
+            alert("enter valid email")
+        }
+        if(password==""){
+            alert("enter a password")
+            return false
+        }
+        if(confirmpassword==""){
+            alert("enter confirm password")
+            return false
+        }
+        if(password != confirmpassword){
+            alert("password does not same, try again...")
+            return false
+        }
+
+        return true;
+    }
+    </script>
+    <form action="#" method="post" onsubmit="return form()">
+
+        <tr>
+            <td>name</td>
+            <input type="text" id="name">
+            
+        </tr>
+        <br>
+        <tr>
+            <td>email</td>
+            <input type="text" id="email">
+            
+        </tr>
+        <br>
+
+        <tr>
+            <td>Password</td>
+            <input type="password" id="pass1">
+        </tr>
+        <br>
+        <tr>
+            <td>Confirm Password</td>
+            <input type="password" id="pass2">
+        </tr>
+        <br>
+        <input type="submit">
+
+    </form>
+</body>
+</html>
